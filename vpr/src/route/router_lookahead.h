@@ -45,8 +45,8 @@ class RouterLookahead {
 // cannot be used.
 std::unique_ptr<RouterLookahead> make_router_lookahead(const t_det_routing_arch& det_routing_arch,
                                                        e_router_lookahead router_lookahead_type,
-                                                       std::string write_lookahead,
-                                                       std::string read_lookahead,
+                                                       const std::string& write_lookahead,
+                                                       const std::string& read_lookahead,
                                                        const std::vector<t_segment_inf>& segment_inf,
                                                        bool is_flat);
 
@@ -59,8 +59,8 @@ void invalidate_router_lookahead_cache();
 // performed via this function.
 const RouterLookahead* get_cached_router_lookahead(const t_det_routing_arch& det_routing_arch,
                                                    e_router_lookahead router_lookahead_type,
-                                                   std::string write_lookahead,
-                                                   std::string read_lookahead,
+                                                   const std::string& write_lookahead,
+                                                   const std::string& read_lookahead,
                                                    const std::vector<t_segment_inf>& segment_inf,
                                                    bool is_flat);
 

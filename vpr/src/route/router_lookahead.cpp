@@ -28,8 +28,8 @@ static std::unique_ptr<RouterLookahead> make_router_lookahead_object(const t_det
 
 std::unique_ptr<RouterLookahead> make_router_lookahead(const t_det_routing_arch& det_routing_arch,
                                                        e_router_lookahead router_lookahead_type,
-                                                       std::string write_lookahead,
-                                                       std::string read_lookahead,
+                                                       const std::string& write_lookahead,
+                                                       const std::string& read_lookahead,
                                                        const std::vector<t_segment_inf>& segment_inf,
                                                        bool is_flat) {
     std::unique_ptr<RouterLookahead> router_lookahead = make_router_lookahead_object(det_routing_arch,
@@ -198,8 +198,8 @@ void invalidate_router_lookahead_cache() {
 
 const RouterLookahead* get_cached_router_lookahead(const t_det_routing_arch& det_routing_arch,
                                                    e_router_lookahead router_lookahead_type,
-                                                   std::string write_lookahead,
-                                                   std::string read_lookahead,
+                                                   const std::string& write_lookahead,
+                                                   const std::string& read_lookahead,
                                                    const std::vector<t_segment_inf>& segment_inf,
                                                    bool is_flat) {
     auto& router_ctx = g_vpr_ctx.routing();
